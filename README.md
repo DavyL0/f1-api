@@ -1,81 +1,121 @@
-<div align="center">
+(Due to technical issues, the search service is temporarily unavailable.)
 
-  <img src="./.github/assets/blue-saiyan-bg.png" alt="Logo" height="200">
-  <h1 align="center"><strong>NODE BOILERPLATE - BLUE EDITION</strong></h1>
-  <p align="center">
-	  Don't start a new Node project from zero!<br> Use this simple <b>Nodejs</b> boilerplate with pre-configured <b>Typescript</b> in a modern way.
-  </p>
+Aqui está o conteúdo do `README.md` formatado para ser copiado e salvo em um arquivo `README.md`. Você pode copiar este texto, colar em um arquivo `.md` e fazer o download.
 
-</div>
+```markdown
+# Formula 1 API
 
-<br />
+Esta é uma API simples construída com Fastify que fornece informações sobre equipes e pilotos da Formula 1.
 
-  <!-- Badges -->
-<div align="center">
-  
-  [![TypeScript version][ts-badge]][typescript-5-4]
-  [![Node.js version][nodejs-badge]][nodejs]
+## Instalação
 
-</div>
+1. Clone o repositório:
 
-# 🚀 Technologies
+   ```bash
+   git clone https://github.com/seu-usuario/formula1-api.git
+   ```
 
-This code source was developed with the following items:
+2. Navegue até o diretório do projeto:
 
-### 📦 Dependencies
+   ```bash
+   cd formula1-api
+   ```
 
-- [typescript][typescript-npm] - Superset for application scale JavaScript development
-- [tsx][tsx-npm] - TypeScript Execute (tsx): Enable Node.js to run TypeScript
-- [tsup][tsup-npm] - Bundle your TypeScript library with no config, powered by esbuild
-- [@types/node][@types/node-npm] - type definitions for node
+3. Instale as dependências:
 
-### 📄 Files
+   ```bash
+   npm install
+   ```
 
-- `.gitignore` - Ignore folders like node_modules
-- `.env` - Enviroment variables
-- `tsconfig.json` - Typescript configure Options
+## Uso
 
-### ⚡ Scripts
-
-- `npm run dist`: Compiles TypeScript files to JavaScript in the dist directory.
-- `npm run start:dev`: Runs the server in development mode with environment variables loaded from the .env file.
-- `npm run start:watch`: Runs the server in development mode with support for automatic reload on file changes.
-- `npm run start:dist`: Compiles the project and runs the compiled version from the dist directory.
-
-# 👨‍💻 How To Use
-
-click in **[Use this template]** OR
-
-To clone and run this application, you'll need [Git](https://git-scm.com), [Node.js v20+](https://nodejs.org/en/) + [NPM v10+](https://nodejs.org/en/) installed on your computer. From your command line:
+Para iniciar o servidor, execute o seguinte comando:
 
 ```bash
-# Clone this repository
-$ git clone https://github.com/felipeAguiarCode/node-blue-boilerplate
-
-# Go into the repository
-$ cd node-blue-boilerplate
-
-# Install dependencies
-$ npm install
+npm start
 ```
 
-## Author
+O servidor estará rodando em `http://localhost:3333`.
 
-| [<img src="https://avatars3.githubusercontent.com/u/37452836?s=96&v=4"><br><sub>Felipe Aguiar</sub>](https://github.com/felipeAguiarCode) |
-| :---------------------------------------------------------------------------------------------------------------------------------------: |
-|                                            [Linkedin](www.linkedin.com/in/felipe-aguiar-exe/)                                             |
+## Endpoints
 
-# Credits
+### Listar todas as equipes
 
-icons by [Pino Lamanna][dribble-icon]
+- **URL:** `/teams`
+- **Método:** `GET`
+- **Resposta:**
+  ```json
+  {
+    "formula1Teams": [
+      {
+        "id": 1,
+        "nome": "Mercedes-AMG Petronas Formula One Team",
+        "base": "Brackley, Reino Unido"
+      },
+      ...
+    ]
+  }
+  ```
 
-[typescript]: https://www.typescriptlang.org/
-[typescript-5-4]: https://www.typescriptlang.org/
-[ts-badge]: https://img.shields.io/badge/TypeScript-5.4-blue.svg
-[nodejs-badge]: https://img.shields.io/badge/Node.js->=%2020.00-blue.svg
-[nodejs]: https://nodejs.org/
-[dribble-icon]: https://dribbble.com/Schakalwal
-[typescript-npm]: https://www.npmjs.com/package/typescript
-[tsx-npm]: https://www.npmjs.com/package/tsx
-[tsup-npm]: https://www.npmjs.com/package/tsup
-[@types/node-npm]: https://www.npmjs.com/package/@types/node
+### Listar todos os pilotos
+
+- **URL:** `/racers`
+- **Método:** `GET`
+- **Resposta:**
+  ```json
+  {
+    "formula1Drivers": [
+      {
+        "id": 1,
+        "nome": "Lewis Hamilton",
+        "equipeId": 1,
+        "nacionalidade": "Britânico"
+      },
+      ...
+    ]
+  }
+  ```
+
+### Obter detalhes de um piloto específico
+
+- **URL:** `/racers/:id`
+- **Método:** `GET`
+- **Parâmetros:**
+  - `id` (número): ID do piloto
+- **Resposta:**
+  ```json
+  {
+    "driver": {
+      "id": 1,
+      "nome": "Lewis Hamilton",
+      "equipeId": 1,
+      "nacionalidade": "Britânico"
+    }
+  }
+  ```
+
+  **Erro:**
+  ```json
+  {
+    "message": "Piloto não encontrado"
+  }
+  ```
+
+## Estrutura do Projeto
+
+- `index.ts`: Arquivo principal que contém a configuração do servidor e os endpoints.
+- `README.md`: Este arquivo, contendo informações sobre o projeto.
+
+## Dependências
+
+- [Fastify](https://www.fastify.io/): Framework web rápido e de baixo overhead para Node.js.
+- [@fastify/cors](https://github.com/fastify/fastify-cors): Plugin para habilitar CORS no Fastify.
+
+## Contribuição
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou enviar um pull request.
+
+## Licença
+
+Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+```
