@@ -1,8 +1,3 @@
-(Due to technical issues, the search service is temporarily unavailable.)
-
-Aqui está o conteúdo do `README.md` formatado para ser copiado e salvo em um arquivo `README.md`. Você pode copiar este texto, colar em um arquivo `.md` e fazer o download.
-
-```markdown
 # Formula 1 API
 
 Esta é uma API simples construída com Fastify que fornece informações sobre equipes e pilotos da Formula 1.
